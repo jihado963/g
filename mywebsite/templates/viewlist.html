@@ -1,8 +1,16 @@
 
 {% block content %}
-
+    <form method="get">
+        <p>Filter: <input type="text" value={{filter}} name="filter"/></p>
+        <p>order_by: <input type="text" value={{orderby}} name="orderby"/></p>
+        <p><input type="submit" name="submit" value="submit"/></p>
+    </form>
 {% for instance in object_list %}
-    <p>{{ instance.id }} - <a href='{{ instance.get_absolute_url }}'>{{ instance.title }}</a> </p>
+    
+    <p>{{ instance.id }} - First name: {{ instance.f_name }} | Last name: {{ instance.l_name }} | Phone num: {{ instance.phone_num }} | E-mail: {{ instance.email }} </p>
 {% endfor %}
+
+  
+
 
 {% endblock %}
