@@ -1,8 +1,15 @@
 
 {% block content %}
     <form method="get">
-        <p>Filter: <input type="text" value={{filter}} name="filter"/></p>
-        <p>order_by: <input type="text" value={{orderby}} name="orderby"/></p>
+        <p>Filter: <input type="text" value="{{filter}}" name="filter"/></p>
+        <p>order_by: </p>
+        <select name="orderby">
+            <option value="id">choose option</option>
+            <option value="f_name">First name</option>
+            <option value="l_name">Last name</option>
+            <option value="phone_num">Phone number</option>
+            <option value="email">E-mail</option>
+        </select>
         <p><input type="submit" name="submit" value="submit"/></p>
     </form>
 {% for instance in object_list %}

@@ -5,7 +5,7 @@ class personM(models.Model):
     email = models.EmailField(max_length=64)
     f_name = models.CharField(max_length=32)
     l_name = models.CharField(max_length=32)
-    phone_num = models.TextField()
+    phone_num = models.CharField(max_length=13)
      
     def __str__(self):
         return self.f_name

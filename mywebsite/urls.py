@@ -16,11 +16,15 @@ Including another URLconf
 
 from django.urls import path 
 from . import views
-from .views import personview, ViewList
+from .views import personview, vlist, export
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-   path('list', ViewList.as_view(), name='viewlist'),
+    path('list', vlist, name='viewlist'),
+    path('', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('csv', export, name='csvlist'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
   
-    path('', personview)
+    path('home', personview)
   
 ]
